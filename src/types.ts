@@ -12,7 +12,7 @@ export interface IMultipleChoice {
   options: IMultipleChoiceOption[];
 }
 
-export interface IOpenEnded {
+export interface ITranslateTheSentence {
   id: number;
   type: string;
   text: string;
@@ -28,7 +28,7 @@ export interface IFillInTheBlank {
   answer: string;
 }
 
-export interface ITranslateTheSentence {
+export interface IFlipTheSentence {
   id: number;
   type: string;
   sentence: string;

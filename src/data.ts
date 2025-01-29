@@ -36,7 +36,7 @@ export default [
   },
   {
     id: 2,
-    type: "OPEN_ENDED",
+    type: "TRANSLATE_THE_SENTENCE",
     text: "Yo soy un hombre",
     answer: "I am a man",
   },
@@ -50,7 +50,7 @@ export default [
   },
   {
     id: 4,
-    type: "TRANSLATE_THE_SENTENCE",
+    type: "FLIP_THE_SENTENCE",
     sentence: "Hace calor.",
     options: ["I have a brother.", "It's hot.", "What's happening?"],
     answer: "It's hot.",
@@ -92,7 +92,7 @@ export default [
   },
   {
     id: 6,
-    type: "OPEN_ENDED",
+    type: "TRANSLATE_THE_SENTENCE",
     text: "La mujer",
     answer: "The woman",
   },
@@ -106,7 +106,7 @@ export default [
   },
   {
     id: 8,
-    type: "TRANSLATE_THE_SENTENCE",
+    type: "FLIP_THE_SENTENCE",
     sentence: "Voy a dormir.",
     options: ["I'm going to sleep.", "It's late.", "I don't understand."],
     answer: "I'm going to sleep.",
@@ -148,7 +148,7 @@ export default [
   },
   {
     id: 10,
-    type: "OPEN_ENDED",
+    type: "TRANSLATE_THE_SENTENCE",
     text: "Me gusta React Native",
     answer: "I like react native",
   },
