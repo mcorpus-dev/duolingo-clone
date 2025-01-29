@@ -72,13 +72,12 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     flex: 1,
-    gap: 12,
     justifyContent: "center",
     alignItems: "center",
   },
   actor: {
-    width: "40%",
-    aspectRatio: 1,
+    width: "30%",
+    aspectRatio: 1 / 2,
   },
   speechContainer: {
     borderColor: "lightgrey",
