@@ -22,6 +22,7 @@ export interface ITranslateTheSentence {
 export interface IFillInTheBlank {
   id: number;
   type: string;
+  sentence: string;
   preText: string;
   postText: string;
   options: string[];

@@ -43,6 +43,7 @@ export default [
   {
     id: 3,
     type: "FILL_IN_THE_BLANK",
+    sentence: "I am learning Spanish",
     preText: "Estoy",
     postText: "español",
     options: ["duele", "eres", "vemos", "aprendiendo", "cabeza"],
@@ -99,6 +100,7 @@ export default [
   {
     id: 7,
     type: "FILL_IN_THE_BLANK",
+    sentence: "I love music",
     preText: "Me encanta la",
     postText: "",
     options: ["tengo", "musica", "ayudar", "hambre", "tiempo"],

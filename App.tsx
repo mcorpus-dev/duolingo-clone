@@ -3,9 +3,14 @@ import { StyleSheet, SafeAreaView, View, Alert } from "react-native";
 
 import MultipleChoiceQuestion from "./src/components/MultipleChoiceQuestion";
 import TranslateTheSentenceQuestion from "./src/components/TranslateTheSentenceQuestion";
+import FillInTheBlankQuestion from "./src/components/FillInTheBlankQuestion";
 
 import data from "./src/data";
-import { IMultipleChoice, ITranslateTheSentence } from "./src/types";
+import {
+  IMultipleChoice,
+  ITranslateTheSentence,
+  IFillInTheBlank,
+} from "./src/types";
 
 export default function App() {
   const [index, setIndex] = useState(0);
@@ -34,6 +39,14 @@ export default function App() {
         {question.type === "TRANSLATE_THE_SENTENCE" && (
           <TranslateTheSentenceQuestion
             question={question as ITranslateTheSentence}
+            onCorrect={handleCorrect}
+            onWrong={handleWrong}
+          />
+        )}
+
+        {question.type === "FILL_IN_THE_BLANK" && (
+          <FillInTheBlankQuestion
+            question={question as IFillInTheBlank}
             onCorrect={handleCorrect}
             onWrong={handleWrong}
           />
