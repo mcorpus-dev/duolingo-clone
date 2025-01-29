@@ -4,12 +4,14 @@ import { StyleSheet, SafeAreaView, View, Alert } from "react-native";
 import MultipleChoiceQuestion from "./src/components/MultipleChoiceQuestion";
 import TranslateTheSentenceQuestion from "./src/components/TranslateTheSentenceQuestion";
 import FillInTheBlankQuestion from "./src/components/FillInTheBlankQuestion";
+import FlipTheSentenceQuestion from "./src/components/FlipTheSentenceQuestion";
 
 import data from "./src/data";
 import {
   IMultipleChoice,
   ITranslateTheSentence,
   IFillInTheBlank,
+  IFlipTheSentence,
 } from "./src/types";
 
 export default function App() {
@@ -47,6 +49,14 @@ export default function App() {
         {question.type === "FILL_IN_THE_BLANK" && (
           <FillInTheBlankQuestion
             question={question as IFillInTheBlank}
+            onCorrect={handleCorrect}
+            onWrong={handleWrong}
+          />
+        )}
+
+        {question.type === "FLIP_THE_SENTENCE" && (
+          <FlipTheSentenceQuestion
+            question={question as IFlipTheSentence}
             onCorrect={handleCorrect}
             onWrong={handleWrong}
           />

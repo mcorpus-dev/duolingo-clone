@@ -3,21 +3,21 @@ import { StyleSheet, View, Text, Image } from "react-native";
 
 import Title from "./Title";
 import Button from "./Button";
-import WordOption from "./WordOption";
+import SentenceOption from "./SentenceOption";
 
-import { IFillInTheBlank } from "../types";
+import { IFlipTheSentence } from "../types";
 
-interface FillInTheBlankQuestionProps {
-  question: IFillInTheBlank;
+interface FlipTheSentenceQuestionProps {
+  question: IFlipTheSentence;
   onCorrect: () => void;
   onWrong: () => void;
 }
 
-export default function FillInTheBlankQuestion({
+export default function FlipTheSentenceQuestion({
   question,
   onCorrect,
   onWrong,
-}: FillInTheBlankQuestionProps) {
+}: FlipTheSentenceQuestionProps) {
   const [selected, setSelected] = useState("");
 
   const handleCheck = () => {
@@ -31,13 +31,13 @@ export default function FillInTheBlankQuestion({
 
   return (
     <View style={styles.container}>
-      <Title text="Fill in the blank" />
+      <Title text="Flip the sentence" />
 
       <View style={styles.body}>
         <View style={styles.detailsContainer}>
           <Image
             style={styles.actor}
-            source={require("../../assets/images/zari.png")}
+            source={require("../../assets/images/vikram.png")}
             resizeMode="contain"
           />
           <View style={styles.speechContainer}>
@@ -45,21 +45,9 @@ export default function FillInTheBlankQuestion({
           </View>
         </View>
 
-        <View style={styles.questionContainer}>
-          <Text style={styles.text}>{question.preText}</Text>
-          <View style={[styles.blank, selected && { width: "auto" }]}>
-            {selected ? (
-              <WordOption text={selected} onPress={() => setSelected("")} />
-            ) : (
-              <WordOption />
-            )}
-          </View>
-          <Text style={styles.text}>{question.postText}</Text>
-        </View>
-
         <View style={styles.optionsContainer}>
           {question.options.map((option) => (
-            <WordOption
+            <SentenceOption
               key={option}
               text={option}
               isSelected={option === selected}
@@ -83,49 +71,28 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   detailsContainer: {
-    flexDirection: "row",
+    flex: 1,
+    gap: 12,
+    justifyContent: "center",
     alignItems: "center",
   },
   actor: {
-    width: "30%",
-    aspectRatio: 1 / 2,
+    width: "40%",
+    aspectRatio: 1,
   },
   speechContainer: {
     borderColor: "lightgrey",
     borderWidth: 2,
     borderRadius: 8,
     padding: 8,
-    flexShrink: 1,
   },
   speech: {
     fontSize: 18,
     fontWeight: "500",
   },
-  questionContainer: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "flex-end",
-    gap: 12,
-    flexWrap: "wrap",
-    alignContent: "center",
-  },
-  text: {
-    fontSize: 18,
-    fontWeight: "500",
-  },
-  blank: {
-    borderColor: "lightgrey",
-    borderBottomWidth: 2,
-    width: 120,
-    paddingBottom: 4,
-  },
   optionsContainer: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    alignContent: "center",
     gap: 12,
+    justifyContent: "center",
   },
 });

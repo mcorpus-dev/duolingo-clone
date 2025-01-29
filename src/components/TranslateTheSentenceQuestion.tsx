@@ -65,7 +65,7 @@ export default function TranslateTheSentenceQuestion({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    gap: 12,
+    gap: 16,
   },
   body: {
     flex: 1,

@@ -52,9 +52,9 @@ export default [
   {
     id: 4,
     type: "FLIP_THE_SENTENCE",
-    sentence: "Hace calor.",
-    options: ["I have a brother.", "It's hot.", "What's happening?"],
-    answer: "It's hot.",
+    sentence: "Hace calor",
+    options: ["I have a brother", "It's hot", "What's happening"],
+    answer: "It's hot",
   },
   {
     id: 5,
@@ -109,9 +109,9 @@ export default [
   {
     id: 8,
     type: "FLIP_THE_SENTENCE",
-    sentence: "Voy a dormir.",
-    options: ["I'm going to sleep.", "It's late.", "I don't understand."],
-    answer: "I'm going to sleep.",
+    sentence: "Voy a dormir",
+    options: ["I'm going to sleep", "It's late", "I don't understand"],
+    answer: "I'm going to sleep",
   },
   {
     id: 9,

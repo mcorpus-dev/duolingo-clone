@@ -53,7 +53,7 @@ export default function MultipleChoiceQuestion({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    gap: 12,
+    gap: 16,
   },
   optionsContainer: {
     flex: 1,
