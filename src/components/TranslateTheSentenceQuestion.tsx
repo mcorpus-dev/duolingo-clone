@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { StyleSheet, View, Image, Text, TextInput } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  TextInput,
+  KeyboardAvoidingView,
+} from "react-native";
 
 import Title from "./Title";
 import Button from "./Button";
@@ -57,7 +64,9 @@ export default function TranslateTheSentenceQuestion({
         />
       </View>
 
-      <Button text="Check" disabled={!input} onPress={handleCheck} />
+      <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={60}>
+        <Button text="Check" disabled={!input} onPress={handleCheck} />
+      </KeyboardAvoidingView>
     </View>
   );
 }
