@@ -17,6 +17,7 @@ import {
 
 export default function App() {
   const [index, setIndex] = useState(0);
+  const [lives, setLives] = useState(5);
 
   const question = data[index];
   const progress = ((index + 1) / data.length) * 100;
@@ -26,13 +27,14 @@ export default function App() {
   };
 
   const handleWrong = () => {
+    setLives((v) => v - 1);
     Alert.alert("Incorrect");
   };
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <Header progress={progress} />
+        <Header progress={progress} lives={lives} />
 
         {question.type === "MULTIPLE_CHOICE" && (
           <MultipleChoiceQuestion
