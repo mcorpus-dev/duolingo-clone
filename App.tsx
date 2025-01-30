@@ -26,7 +26,7 @@ export default function App() {
     const isWinner = index + 1 === data.length;
 
     if (isWinner) {
-      Alert.alert("You won!", "Game will restart.");
+      Alert.alert("You won!", "Game restarted.");
       restartGame();
     } else {
       setIndex((v) => v + 1);
@@ -37,7 +37,7 @@ export default function App() {
     const isLoser = lives - 1 === 0;
 
     if (isLoser) {
-      Alert.alert("You lose!", "Game will restart.");
+      Alert.alert("You lose!", "Game restarted.");
       restartGame();
     } else {
       Alert.alert("Incorrect");
