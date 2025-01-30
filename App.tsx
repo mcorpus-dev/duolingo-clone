@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, SafeAreaView, View, Alert } from "react-native";
 
+import Header from "./src/components/Header";
 import MultipleChoiceQuestion from "./src/components/MultipleChoiceQuestion";
 import TranslateTheSentenceQuestion from "./src/components/TranslateTheSentenceQuestion";
 import FillInTheBlankQuestion from "./src/components/FillInTheBlankQuestion";
@@ -18,6 +19,7 @@ export default function App() {
   const [index, setIndex] = useState(0);
 
   const question = data[index];
+  const progress = ((index + 1) / data.length) * 100;
 
   const handleCorrect = () => {
     setIndex((v) => v + 1);
@@ -30,6 +32,8 @@ export default function App() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
+        <Header progress={progress} />
+
         {question.type === "MULTIPLE_CHOICE" && (
           <MultipleChoiceQuestion
             question={question as IMultipleChoice}
@@ -73,5 +77,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 12,
+    gap: 12,
   },
 });
