@@ -23,12 +23,31 @@ export default function App() {
   const progress = ((index + 1) / data.length) * 100;
 
   const handleCorrect = () => {
-    setIndex((v) => v + 1);
+    const isWinner = index + 1 === data.length;
+
+    if (isWinner) {
+      Alert.alert("You won!", "Game will restart.");
+      restartGame();
+    } else {
+      setIndex((v) => v + 1);
+    }
   };
 
   const handleWrong = () => {
-    setLives((v) => v - 1);
-    Alert.alert("Incorrect");
+    const isLoser = lives - 1 === 0;
+
+    if (isLoser) {
+      Alert.alert("You lose!", "Game will restart.");
+      restartGame();
+    } else {
+      Alert.alert("Incorrect");
+      setLives((v) => v - 1);
+    }
+  };
+
+  const restartGame = () => {
+    setIndex(0);
+    setLives(5);
   };
 
   return (
